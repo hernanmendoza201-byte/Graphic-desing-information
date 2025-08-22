@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars: Una Galaxia Transmedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('https://wallpapercave.com/wp/wp11249989.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #52A8FF;
+            border: 4px solid #004AAD;
+        }
+        .timeline-path {
+            position: absolute;
+            left: -22px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #004AAD;
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12 md:mb-20">
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-4">UNA GALAXIA TRANSMEDIA</h1>
+            <p class="text-lg md:text-xl text-[#B8DBFF] max-w-3xl mx-auto">Star Wars es más que películas. Es un universo narrativo expansivo contado a través de múltiples medios, donde cada pieza es esencial para comprender la historia completa.</p>
+        </header>
+
+        <main class="space-y-12 md:space-y-20">
+
+            <section id="reboot" class="bg-[#0a192f]/80 backdrop-blur-sm rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-white text-center mb-6">El Gran Reinicio: Canon vs. Legends</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-[#B8DBFF]">En 2014, la narrativa de Star Wars se redefinió. El vasto Universo Expandido fue renombrado como "Legends" para dar paso a un nuevo canon unificado y coherente, cuidadosamente planificado bajo la supervisión de Lucasfilm Story Group.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-[#0a192f]/80 p-6 rounded-lg border border-[#004AAD]">
+                        <h3 class="text-2xl font-bold text-[#52A8FF] mb-3">Star Wars Legends</h3>
+                        <p class="text-sm mb-4">Anteriormente conocido como el Universo Expandido, es una colección inmensa de historias que creció orgánicamente. Aunque ya no es canon, muchos de sus conceptos y personajes más queridos han sido reintroducidos en la nueva continuidad.</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm text-[#B8DBFF]">
+                            <li>Crecimiento orgánico y no centralizado.</li>
+                            <li>Jerarquía de canonicidad a menudo confusa.</li>
+                            <li>Contenía contradicciones con la visión de George Lucas.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#0a192f]/80 p-6 rounded-lg border border-[#0079FF]">
+                        <h3 class="text-2xl font-bold text-[#52A8FF] mb-3">Canon Oficial</h3>
+                        <p class="text-sm mb-4">El canon actual, iniciado en 2014, incluye las películas, series de TV, libros, cómics y videojuegos lanzados desde entonces. Cada nueva historia es una pieza intencionada de un rompecabezas narrativo cohesivo y unificado.</p>
+                         <ul class="list-disc list-inside space-y-1 text-sm text-[#B8DBFF]">
+                            <li>Estrategia narrativa unificada y planificada.</li>
+                            <li>Todas las historias tienen el mismo nivel de validez.</li>
+                            <li>Diseñado para evitar contradicciones y crear sinergias.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ecosystem" class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-2">El Ecosistema Narrativo</h2>
+                <p class="text-lg text-[#B8DBFF] max-w-2xl mx-auto mb-8">Cada tipo de medio juega un papel único y vital en la construcción del universo Star Wars.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-8">
+                    <div class="flex flex-col items-center p-4 bg-[#0a192f]/80 rounded-lg">
+                        <div class="text-4xl mb-2">🎬</div>
+                        <h3 class="text-xl font-bold text-white">Películas</h3>
+                        <p class="text-sm text-[#B8DBFF] max-w-xs">Son los pilares centrales que definen las eras y los eventos más importantes de la saga.</p>
+                    </div>
+                    <div class="hidden md:flex items-center text-2xl text-[#0079FF] font-bold">→</div>
+                    <div class="flex md:hidden items-center text-2xl text-[#0079FF] font-bold">↓</div>
+                    <div class="flex flex-col items-center p-4 bg-[#0a192f]/80 rounded-lg">
+                        <div class="text-4xl mb-2">📺</div>
+                        <h3 class="text-xl font-bold text-white">Series</h3>
+                        <p class="text-sm text-[#B8DBFF] max-w-xs">Profundizan en personajes y conflictos, expandiendo las tramas presentadas en las películas.</p>
+                    </div>
+                    <div class="hidden md:flex items-center text-2xl text-[#0079FF] font-bold">→</div>
+                    <div class="flex md:hidden items-center text-2xl text-[#0079FF] font-bold">↓</div>
+                    <div class="flex flex-col items-center p-4 bg-[#0a192f]/80 rounded-lg">
+                         <div class="text-4xl mb-2">📖/🗯️</div>
+                        <h3 class="text-xl font-bold text-white">Libros y Cómics</h3>
+                        <p class="text-sm text-[#B8DBFF] max-w-xs">Rellenan los vacíos narrativos, exploran subtramas y presentan nuevos mundos y personajes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="timeline">
+                 <h2 class="text-3xl font-bold text-white text-center mb-10">Un Viaje a Través de las Eras Canónicas</h2>
+                <div class="relative pl-10 bg-[#0a192f]/80 rounded-lg p-6">
+                    <div class="timeline-path"></div>
+                    <div class="space-y-12">
+                        <div class="relative timeline-item">
+                            <h3 class="text-2xl font-bold text-[#52A8FF]">Alta República <span class="text-sm font-normal text-gray-400">(c. 350-100 BBY)</span></h3>
+                            <p class="mt-2 text-[#B8DBFF]">La edad de oro de los Jedi. Una era de paz y exploración, contada principalmente a través de una iniciativa transmedia de libros y cómics.</p>
+                        </div>
+                        <div class="relative timeline-item">
+                            <h3 class="text-2xl font-bold text-[#52A8FF]">Caída de los Jedi <span class="text-sm font-normal text-gray-400">(32-19 BBY)</span></h3>
+                            <p class="mt-2 text-[#B8DBFF]">Narra el ascenso del Emperador Palpatine y la transformación de Anakin Skywalker. Anclada por las <span class="font-bold text-white">Precuelas</span> y expandida masivamente por la serie <span class="font-bold text-white">The Clone Wars</span>.</p>
+                        </div>
+                        <div class="relative timeline-item">
+                            <h3 class="text-2xl font-bold text-[#52A8FF]">Reinado del Imperio <span class="text-sm font-normal text-gray-400">(19-0 BBY)</span></h3>
+                            <p class="mt-2 text-[#B8DBFF]">El Imperio Galáctico consolida su poder. Este período oscuro es explorado en series como <span class="font-bold text-white">Obi-Wan Kenobi</span>, <span class="font-bold text-white">Andor</span> y <span class="font-bold text-white">Rebels</span>, y la película <span class="font-bold text-white">Rogue One</span>.</p>
+                        </div>
+                        <div class="relative timeline-item">
+                            <h3 class="text-2xl font-bold text-[#52A8FF]">Era de la Rebelión <span class="text-sm font-normal text-gray-400">(0 BBY - 4 ABY)</span></h3>
+                            <p class="mt-2 text-[#B8DBFF]">La lucha de la Alianza Rebelde contra el Imperio. El corazón de esta era es la <span class="font-bold text-white">Trilogía Original</span>, con cómics y libros que detallan los eventos entre las películas.</p>
+                        </div>
+                        <div class="relative timeline-item">
+                            <h3 class="text-2xl font-bold text-[#52A8FF]">La Nueva República <span class="text-sm font-normal text-gray-400">(c. 5-34 ABY)</span></h3>
+                            <p class="mt-2 text-[#B8DBFF]">El período de inestabilidad tras la caída del Imperio. Es el escenario principal de series como <span class="font-bold text-white">The Mandalorian</span> y <span class="font-bold text-white">Ahsoka</span>, que exploran los remanentes imperiales.</p>
+                        </div>
+                         <div class="relative timeline-item">
+                            <h3 class="text-2xl font-bold text-[#52A8FF]">Ascenso de la Primera Orden <span class="text-sm font-normal text-gray-400">(34-35 ABY)</span></h3>
+                            <p class="mt-2 text-[#B8DBFF]">Treinta años después de la Batalla de Endor, una nueva amenaza surge de las cenizas del Imperio. Esta era es definida por la <span class="font-bold text-white">Trilogía de Secuelas</span>.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="media-distribution" class="bg-[#0a192f]/80 backdrop-blur-sm rounded-lg shadow-2xl p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-4">Distribución de la Narrativa por Medio</h2>
+                        <p class="text-[#B8DBFF] mb-4">Mientras que las películas son el evento principal, la mayor parte del universo canónico de Star Wars se construye a través de otros medios. Los libros y cómics son cruciales para la expansión del lore, seguidos de cerca por las series animadas y de acción real que han ganado una inmensa popularidad.</p>
+                        <p class="text-sm text-gray-400">Esta distribución demuestra el compromiso de la franquicia con un modelo transmedia, donde la historia vive y respira mucho más allá de la gran pantalla.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="mediaDistributionChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="text-center mt-12 md:mt-20 pt-8 border-t border-[#004AAD]/50">
+            <p class="text-sm text-gray-500">Esta infografía visualiza la estrategia de narrativa transmedia del canon de Star Wars. Ni Mermaid JS ni SVG fueron utilizados en su creación.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = currentLine ? currentLine + ' ' + word : word;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        };
+
+        const ctx = document.getElementById('mediaDistributionChart').getContext('2d');
+        const mediaDistributionChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Películas', 'Series Live-Action', 'Series Animadas', 'Novelas', 'Cómics'],
+                datasets: [{
+                    label: 'Distribución de Contenido',
+                    data: [12, 8, 8, 150, 200],
+                    backgroundColor: [
+                        '#FFFFFF',
+                        '#B8DBFF',
+                        '#52A8FF',
+                        '#0079FF',
+                        '#004AAD'
+                    ],
+                    borderColor: '#0a192f',
+                    borderWidth: 4,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            color: '#B8DBFF',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
